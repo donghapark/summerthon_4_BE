@@ -20,6 +20,10 @@ from savescore.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('get/<int:pk>/',GetScore.as_view()),
-    path('create/',createScore.as_view())
+    
+    path('create/1page/',CreateScore.as_view()),
+    path('create/2page/<int:pk>/',UpdateScore456.as_view()),
+    path('create/3page/<int:pk>/',UpdateScore78910.as_view()),
+
+    path('get/<int:pk>/',GetScore.as_view()),   
 ]
