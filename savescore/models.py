@@ -14,3 +14,16 @@ class Score(models.Model):
     score8 = models.DecimalField(null=True,blank=True,max_digits=5, decimal_places=2,verbose_name='점수8',default=0.0)
     score9 = models.DecimalField(null=True,blank=True,max_digits=5, decimal_places=2,verbose_name='점수9',default=0.0)
     score10 =models.DecimalField(null=True,blank=True,max_digits=5, decimal_places=2,verbose_name='점수10',default=0.0)
+
+
+    # def score_sum1(self):
+    #     return self.score1 + self.score2
+    # def score_sum2(self):
+    #     return self.score3 + self.score4
+    # def score_sum3(self):
+    #     return self.score5 + self.score6
+    # def score_sum4(self):
+    #     return self.score7 + self.score8
+    # def score_sum5(self):
+    #     return self.score9 + self.score10
+
