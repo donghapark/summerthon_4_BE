@@ -16,9 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from savescore.views import GetScore
+from savescore.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    #path('test/<int:pk>',GetScore)
+    path('test/<int:pk>/',GetScore.as_view()),
 ]
