@@ -24,9 +24,10 @@ urlpatterns = [
     path('selectTest/',CreateScore.as_view()),
 
 
-    path('update1/<int:pk>',UpdateScore123.as_view()),
+    path('update1/<int:pk>/',UpdateScore123.as_view()),
     path('update2/<int:pk>/',UpdateScore456.as_view()),
     path('update3/<int:pk>/',UpdateScore78910.as_view()),
+
 
     path('testresult/<int:pk>/',GetScore.as_view()),   
 ]

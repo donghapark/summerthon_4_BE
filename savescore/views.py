@@ -4,12 +4,20 @@ from rest_framework.response import Response
 from rest_framework.generics import RetrieveAPIView,CreateAPIView
 
 from rest_framework.views import APIView
-from .serializers import ScoreSerializer
+from .serializers import ScoreSerializer,TestIdSerializer
 
 
-class CreateScore(CreateAPIView):#post임
-        #queryset=Score.objects.all() #create이기 때문에 쿼리셋 쓸 필요 없음
-        serializer_class=ScoreSerializer
+class CreateScore(APIView):#post임
+    #queryset=Score.objects.all() #create이기 때문에 쿼리셋 쓸 필요 없음
+    #serializer_class=ScoreSerializer
+
+    def post(self,request):
+        score=Score()
+        score.test_type = request.data.get('test_type', score.test_type)
+        score.save()
+        score_serializer=TestIdSerializer(score)
+        return Response(score_serializer.data, status=200)
+
 
 class UpdateScore123(APIView):
     serializer_class = ScoreSerializer
